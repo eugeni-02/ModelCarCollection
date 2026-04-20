@@ -142,7 +142,7 @@ public class ScanActivity extends AppCompatActivity {
                 new ImageCapture.OnImageSavedCallback() {
                     @Override
                     public void onImageSaved(@NonNull ImageCapture.OutputFileResults output) {
-                        identifyWithClaude(photoFile);
+                        identifyWithGemini(photoFile);
                     }
 
                     @Override
@@ -156,7 +156,7 @@ public class ScanActivity extends AppCompatActivity {
         capturedPhotoPath = photoFile.getAbsolutePath();
     }
 
-    private void identifyWithClaude(File photoFile) {
+    private void identifyWithGemini(File photoFile) {
         try {
             // Read and encode photo
             FileInputStream fis = new FileInputStream(photoFile);

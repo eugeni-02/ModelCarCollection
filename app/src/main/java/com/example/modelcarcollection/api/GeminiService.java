@@ -5,16 +5,16 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
-public interface AnthropicService {
+public interface GeminiService {
 
     @Headers({
-            "anthropic-version: 2023-06-01",
             "content-type: application/json"
     })
-    @POST("v1/messages")
+    @POST("v1beta/models/gemini-2.5-flash:generateContent")
     Call<okhttp3.ResponseBody> identifyCar(
-            @retrofit2.http.Header("x-api-key") String apiKey,
+            @Query("key") String apiKey,
             @Body RequestBody body
     );
 }
