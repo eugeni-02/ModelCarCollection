@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <ImageView
+            android:id="@+id/car_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp"
+            android:background="#F0F0F0"/>
+        <TextView
+            android:id="@+id/car_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:text="Car Name"/>
+
+        <TextView
+            android:id="@+id/car_meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginTop="2dp"
+            android:text="Year · Brand · Color"/>
+
+        <TextView
+            android:id="@+id/car_year_of_release"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginTop="2dp"
+            android:text="Model released: 2003"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/car_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#EEEDFE"
+                android:textColor="#3C3489"
+                android:textSize="11sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:layout_marginEnd="6dp"
+                android:text="1:64"/>
+
+            <TextView
+                android:id="@+id/car_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E1F5EE"
+                android:textColor="#085041"
+                android:textSize="11sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="Hot Wheels"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/car_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:text="$340"/>
+
+            <TextView
+                android:id="@+id/car_trend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="#3B6D11"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center_vertical"
+                android:text="+12%"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
