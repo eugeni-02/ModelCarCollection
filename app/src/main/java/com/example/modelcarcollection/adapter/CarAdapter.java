@@ -1,17 +1,18 @@
 package com.example.modelcarcollection.adapter;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
-import com.example.modelcarcollection.EditCarActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.modelcarcollection.EditCarActivity;
 import com.example.modelcarcollection.R;
 import com.example.modelcarcollection.model.Car;
 import com.example.modelcarcollection.utils.ImageUtils;
-import android.graphics.Bitmap;
+
 import java.util.List;
 
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {

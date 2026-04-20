@@ -1,5 +1,6 @@
 package com.example.modelcarcollection;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +15,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executors;
-import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
