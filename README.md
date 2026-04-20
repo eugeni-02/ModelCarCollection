@@ -76,7 +76,7 @@ The user has the option to click on any car tab so he can edit the data points o
 
 ---
 
-When the user wants to add another car to his collection he needs to press the "Scan a model car" on the homescreen. This button opens up the back camera of the phone allowing the user to take the picture of the car. After that the AI model analyzes the car and returns the aforementioned information about the model car.
+When the user wants to add another car to his collection he needs to press the "Scan a model car" on the homescreen. This button opens up the back camera of the phone allowing the user to take a picture of the car. After that the AI model analyzes the car and returns the aforementioned information about the model car. The user can then edit the information about the the model before adding it to the collection. 
 
 
 <img width="640" height="1400" alt="Scan" src="https://github.com/user-attachments/assets/9bd8ea7e-4d8f-4356-94d6-3bc7bbd7a73c" />
