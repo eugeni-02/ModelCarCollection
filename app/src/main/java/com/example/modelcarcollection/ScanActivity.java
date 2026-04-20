@@ -224,6 +224,8 @@ public class ScanActivity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     if (response.code() == 429) {
                         scanStatus.setText("Too many requests. Please wait and try again.");
+                    } else if (response.code() == 503) {
+                        scanStatus.setText("AI servers are busy. Please try again in a few seconds.");
                     } else {
                         scanStatus.setText("API error " + response.code() + ": " + errorBody);
                     }

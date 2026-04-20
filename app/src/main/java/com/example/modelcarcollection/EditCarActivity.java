@@ -8,13 +8,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.modelcarcollection.database.CarDatabase;
 import com.example.modelcarcollection.model.Car;
+import com.example.modelcarcollection.utils.ImageUtils;
+import android.graphics.Bitmap;
 import java.io.File;
 import java.util.concurrent.Executors;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import androidx.exifinterface.media.ExifInterface;
-import java.io.IOException;
 
 public class EditCarActivity extends AppCompatActivity {
 
@@ -60,22 +57,8 @@ public class EditCarActivity extends AppCompatActivity {
                     editColor.setText(currentCar.color);
                     editValue.setText(currentCar.marketValue);
                     if (currentCar.imageUrl != null && !currentCar.imageUrl.isEmpty()) {
-                        File imgFile = new File(currentCar.imageUrl);
-                        if (imgFile.exists()) {
-                            Bitmap bitmap = BitmapFactory.decodeFile(currentCar.imageUrl);
-                            try {
-                                ExifInterface exif = new ExifInterface(currentCar.imageUrl);
-                                int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-                                Matrix matrix = new Matrix();
-                                switch (orientation) {
-                                    case ExifInterface.ORIENTATION_ROTATE_90: matrix.postRotate(90); break;
-                                    case ExifInterface.ORIENTATION_ROTATE_180: matrix.postRotate(180); break;
-                                    case ExifInterface.ORIENTATION_ROTATE_270: matrix.postRotate(270); break;
-                                }
-                                bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                        Bitmap bitmap = ImageUtils.loadCorrectedBitmap(currentCar.imageUrl);
+                        if (bitmap != null) {
                             carImage.setImageBitmap(bitmap);
                         }
                     }

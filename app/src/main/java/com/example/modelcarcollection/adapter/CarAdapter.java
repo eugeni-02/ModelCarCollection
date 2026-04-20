@@ -10,11 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.modelcarcollection.R;
 import com.example.modelcarcollection.model.Car;
+import com.example.modelcarcollection.utils.ImageUtils;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import androidx.exifinterface.media.ExifInterface;
-import java.io.IOException;
 import java.util.List;
 
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
@@ -54,23 +51,11 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
         holder.value.setText(car.marketValue);
         holder.trend.setText(car.trend);
         if (car.imageUrl != null && !car.imageUrl.isEmpty()) {
-            java.io.File imgFile = new java.io.File(car.imageUrl);
-            if (imgFile.exists()) {
-                Bitmap bitmap = BitmapFactory.decodeFile(car.imageUrl);
-                try {
-                    ExifInterface exif = new ExifInterface(car.imageUrl);
-                    int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-                    Matrix matrix = new Matrix();
-                    switch (orientation) {
-                        case ExifInterface.ORIENTATION_ROTATE_90: matrix.postRotate(90); break;
-                        case ExifInterface.ORIENTATION_ROTATE_180: matrix.postRotate(180); break;
-                        case ExifInterface.ORIENTATION_ROTATE_270: matrix.postRotate(270); break;
-                    }
-                    bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            Bitmap bitmap = ImageUtils.loadCorrectedBitmap(car.imageUrl);
+            if (bitmap != null) {
                 holder.carImage.setImageBitmap(bitmap);
+            } else {
+                holder.carImage.setImageResource(android.R.drawable.ic_menu_gallery);
             }
         } else {
             holder.carImage.setImageResource(android.R.drawable.ic_menu_gallery);
