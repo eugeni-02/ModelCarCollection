@@ -1,7 +1,7 @@
 package com.example.modelcarcollection;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.modelcarcollection.database.CarDatabase;
 import com.example.modelcarcollection.model.Car;
 import com.example.modelcarcollection.utils.ImageUtils;
-import android.graphics.Bitmap;
-import java.io.File;
 import java.util.concurrent.Executors;
 
 public class EditCarActivity extends AppCompatActivity {
