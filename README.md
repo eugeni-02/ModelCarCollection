@@ -40,3 +40,43 @@ GEMINI_API_KEY=your_actual_key_here
 *   **UI Components:** Material Design, RecyclerView, ConstraintLayout.
 *   **Jetpack Libraries:** CameraX, Room, Lifecycle (ViewModel/LiveData).
 *   **Networking:** OkHttp for RESTful API communication.
+
+---
+
+## Application
+
+Here are some screenshots of the application in operation.
+First you have the homepage. The homepage shows the user a header with the most relevant information:
+
+* **Total number of cars in collection**
+* **Estimated value of the whole collection**
+* **The number of different brands in a collection**
+
+
+After that the user is greeted with a list of car tabs where each tab represents a user's car from his collection. Each car tab consists of:
+* **The user's picture used to identify the car**
+* **The name of the car**
+* **The year of the real car**
+* **The name of the brand that produced the model**
+* **The color of the car**
+* **The year of release of the model car**
+* **The scale of the model car**
+* **A stylized box with the name of the brand that produced the model**
+* **The estimated value of the model**
+
+<img width="640" height="1400" alt="Main" src="https://github.com/user-attachments/assets/488cfa7d-15e5-45d0-9c6d-9a4498c0a34c" />
+
+---
+
+The user has the option to click on any car tab so he can edit the data points of each car, excluding the picture. In this window the user also has the option to remove that car from his collection.
+
+<img width="640" height="1400" alt="Edit" src="https://github.com/user-attachments/assets/73bff4f4-d7b3-4092-9f32-923d1d022be9" />
+<br>
+
+
+---
+
+When the user wants to add another car to his collection he needs to press the "Scan a model car" on the homescreen. This button opens up the back camera of the phone allowing the user to take the picture of the car. After that the AI model analyzes the car and returns the aforementioned information about the model car.
+
+
+<img width="640" height="1400" alt="Scan" src="https://github.com/user-attachments/assets/9bd8ea7e-4d8f-4356-94d6-3bc7bbd7a73c" />
