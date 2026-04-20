@@ -7,8 +7,8 @@ To get this project running on your local machine, follow these steps:
 *   A physical Android device or Emulator (API 26+).
 *   A **Gemini API Key** (Get one for free at [Google AI Studio](https://aistudio.google.com/)).
 
-### 2. Security Setup (!)
-This project uses a secure method to handle API keys so they are not exposed on GitHub.
+### 2. API Setup (!)
+This project uses a secure method to handle API keys so that they are not exposed on GitHub.
 
 1.  Open the project in Android Studio.
 2.  In the root directory, locate or create a file named `local.properties`.
